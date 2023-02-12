@@ -15,14 +15,14 @@ body {
   }
   
   h1 {
-    font-family: 'Neue Haas Unica';
+    font-family: 'Apfel Grotezk';
     font-size: 20px;
     font-weight: 700;
     padding-right: 5px;
   }
   
   h2 {
-    font-family: 'Neue Haas Unica';
+    font-family: 'Apfel Grotezk';
     font-size: 20px;
     font-weight: normal;
   }
@@ -30,7 +30,7 @@ body {
 .main {
     position: relative;
     height: 100%;
-    font-family: 'Neue Haas Unica';
+    font-family: 'Apfel Grotezk';
 }
 
 .info {

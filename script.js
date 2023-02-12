@@ -139,7 +139,7 @@ for (let i = 0; i <projects.length; i++) {
 
 
 const showIndex = (e) => {
-    document.getElementById("menu").style.display = "block";
+    document.getElementById("menu").style.display = "flex";
     document.getElementById("index").style.display = "none"; 
     content.style.display = "none"; 
     document.getElementById("nav").style.display = "none"

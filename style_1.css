@@ -1,0 +1,39 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+}
+
+.header {
+    display: inline-flex;
+    padding-left: 10px;
+    padding-top: 10px; 
+  }
+  
+  h1 {
+    font-family: 'Arial Narrow';
+    font-size: 20px;
+    font-weight: 700;
+    padding-right: 5px;
+  }
+  
+  h2 {
+    font-family: 'Arial Narrow';
+    font-size: 20px;
+    font-weight: normal;
+  }
+
+.main {
+    position: relative;
+    height: 100%;
+    font-family: 'Arial Narrow';
+}
+
+.info {
+    position: relative;
+    padding-left: 10px;
+}

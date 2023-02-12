@@ -1,0 +1,193 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+
+.header {
+  position: absolute;
+  display: inline-flex;
+  padding-left: 10px;
+  padding-top: 10px; 
+}
+
+h1 {
+  font-family: 'Arial Narrow';
+  font-size: 20px;
+  font-weight: 700;
+  padding-right: 5px;
+}
+
+h2 {
+  font-family: 'Arial Narrow';
+  font-size: 20px;
+  font-weight: normal;
+}
+
+#index {
+  position: absolute;
+  display: none;
+  padding-left: 10px;
+  top: 75px;
+  font-family: 'Arial Narrow';
+  font-weight: bold;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+#index:hover {
+  color: blue;
+  font-weight: bold;
+}
+
+#menu {
+  position: absolute;
+  padding-left: 10px;
+  top: 75px;
+  width: 100vw;
+}
+
+#table {
+  width: 100%;
+  table-layout: fixed;
+  text-align: left;
+  font-family: 'Arial Narrow';
+  font-size: 20px;
+  list-style: none;
+  cursor: pointer;
+}
+
+tr:hover {
+  color: blue;
+  font-weight: bold;
+}
+
+
+
+.type {
+    font-family: 'Arial Narrow';
+    font-size: 20px;
+    list-style: none;
+    cursor: pointer;
+}
+
+.year {
+  text-align: right;
+  padding-right: 20px;
+}
+
+
+
+main {
+    display: flex;
+    top: 0px; 
+    left: 0px;
+    width: 100vw;
+    height: 95vh;
+    padding: 0px;
+    margin: 0px 0px 0px 0px;
+}
+
+.sidebar {
+    /* background-color: #ccc; */
+    height: 100%;
+    width: 20%;
+    font-family: 'Arial Narrow';
+}
+
+.info {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-family: 'Arial Narrow';
+  font-size: 20px;
+  cursor: pointer;
+}
+
+
+
+/* unvisited link */
+a:link {
+    color: black;
+  }
+  
+  /* visited link */
+  a:visited {
+    color: black;
+  }
+  
+  /* mouse over link */
+  a:hover {
+    color: blue;
+    text-decoration: underline;
+    font-weight: bold;
+  }
+  
+  /* selected link */
+  a:active {
+    color: blue;
+  }
+
+
+#nav ul {
+    position: relative;
+    display: none;
+    justify-content: space-evenly;
+    height: 10%;
+    width: 100vw;
+    bottom: 0px;
+    left: 0px;
+}
+
+.caption {
+    display: block;
+    font-family: 'Arial Narrow';
+    font-size: 20px;
+    padding-top: 10px;
+    margin-right: 50px;
+    cursor: pointer;
+}
+
+.caption:hover {
+    color: blue;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.content {
+    width: 80%;
+    display: inline-flex;
+    overflow: scroll;
+    flex-wrap: nowrap;
+
+}
+
+img {
+  margin-left: 10px;
+}
+
+.content::-webkit-scrollbar {
+    display: none;
+  }
+
+
+
+#frontBanner {
+  display: inline-flex;
+  width: 100vw;
+  height: 100vh;
+}
+
+.banner {
+  height: 75%;
+  position: relative;
+  padding: 0px;
+  margin: 0px;
+}
+  

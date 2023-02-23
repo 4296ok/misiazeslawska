@@ -18,16 +18,12 @@ body {
 }
 
 h1 {
-  font-family: 'Apfel Grotezk';
-  font-size: 20px;
-  font-weight: 700;
+  font: 20px PP Neue Montreal;
   padding-right: 5px;
 }
 
 h2 {
-  font-family: 'Apfel Grotezk';
-  font-size: 20px;
-  font-weight: normal;
+  font: 20px PP Neue Montreal Thin;
 }
 
 #index {
@@ -35,9 +31,7 @@ h2 {
   display: none;
   padding-left: 10px;
   top: 75px;
-  font-family: 'Apfel Grotezk';
-  font-weight: bold;
-  font-size: 20px;
+  font: 20px PP Neue Montreal;
   cursor: pointer;
 }
 
@@ -57,8 +51,7 @@ h2 {
   width: 100%;
   table-layout: fixed;
   text-align: left;
-  font-family: 'Apfel Grotezk';
-  font-size: 20px;
+  font: 20px PP Neue Montreal;
   list-style: none;
   cursor: pointer;
 }
@@ -71,8 +64,7 @@ tr:hover {
 
 
 .type {
-    font-family: 'Apfel Grotezk';
-    font-size: 20px;
+    font: 20px PP Neue Montreal;
     list-style: none;
     cursor: pointer;
 }
@@ -98,15 +90,14 @@ main {
     /* background-color: #ccc; */
     height: 100%;
     width: 20%;
-    font-family: 'Apfel Grotezk';
-}
+    font: 20px PP Neue Montreal;
+  }
 
 .info {
   position: absolute;
   right: 10px;
   top: 10px;
-  font-family: 'Apfel Grotezk';
-  font-size: 20px;
+  font: 20px PP Neue Montreal;
   cursor: pointer;
 }
 
@@ -147,18 +138,14 @@ a:link {
 
 .caption {
     display: flex;
-    font-family: 'Apfel Grotezk';
-    font-size: 20px;
+    font: 20px PP Neue Montreal;
     padding-top: 10px;
     margin-right: 50px;
+    color: blue;
     cursor: pointer;
 }
 
-.caption:hover {
-    color: blue;
-    font-weight: bold;
-    text-decoration: underline;
-}
+
 
 .content {
     width: 80%;

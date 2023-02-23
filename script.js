@@ -46,6 +46,9 @@ const showProject = (e) => {
     document.getElementById("projects").style.display = "inline-flex";
     document.getElementById("index").style.display = "flex";
     content.innerHTML = "";
+
+    
+
     const folderName = e.target.innerHTML.split(" ").join("").toLowerCase();
     for (let i = 0; i < projectFolders[folderName]; i++) {
         const image = document.createElement("img");
@@ -56,6 +59,8 @@ const showProject = (e) => {
 
 }
 
+// create navigation
+
 for (let i = 0; i < projects.length; i++) {
     let li = document.createElement("li");
     li.setAttribute("id", projects[i].split(" ").join(""));
@@ -65,6 +70,8 @@ for (let i = 0; i < projects.length; i++) {
     ul.appendChild(li);
     nav.appendChild(ul);
 };
+
+// create banner on front page
 
 const showBanner = (e) => {
     content.innerHTML = "";

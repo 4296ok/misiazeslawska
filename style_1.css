@@ -8,41 +8,58 @@ body {
     height: 100vh;
 }
 
-.header {
-    display: inline-flex;
-    padding-left: 10px;
-    padding-top: 10px; 
-  }
-  
-  h1 {
-    font-family: 'Apfel Grotezk';
-    font-size: 20px;
-    font-weight: 700;
-    padding-right: 5px;
-  }
-  
-  h2 {
-    font-family: 'Apfel Grotezk';
-    font-size: 20px;
-    font-weight: normal;
-  }
+.back {
+  font: 4rem PP Neue Montreal;
+  text-decoration: none;
+  padding-left: 10px;
+}
+
+a:link {
+  color: black;
+}
+
+/* visited link */
+a:visited {
+  color: black;
+}
+
+/* mouse over link */
+a:hover {
+  color: blue;
+  font-weight: bold;
+}
+
+/* selected link */
+a:active {
+  color: blue;
+}
 
 .main {
     position: relative;
+    display: flex;
+    width: 98vw;
     height: 100%;
-    font-family: 'Apfel Grotezk';
+    padding-top: 200px;
+    padding-left: 10px;
+    font: 4rem PP Neue Montreal;
+    line-height: 3.5rem;
+
 }
 
-.info {
-    position: relative;
-    width: 25%;
-    padding-left: 10px;
-    /* text-align: justify; */
-    /* text-justify: inter-word; */
-}
 
 p:before { content: "\00a0 \00a0 \00a0 \00a0 \00a0 "; }
 
+button {
+  width: 50px;
+  height: 70px;
+  border: 0px;
+  background-image: url(photo.jpeg);
+  background-size: 100%;
+}
+
+button:hover {
+  transform: scale(3);
+}
 
 
 

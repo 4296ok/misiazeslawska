@@ -1,0 +1,28 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+/* Global Link Styling */
+a {
+  color: black; /* Default color for all links */
+  text-decoration: none;
+}
+
+a:visited {
+  color: black; /* Ensure visited links are also black */
+}
+
+a:hover {
+  text-decoration: underline; /* Optional: Add an underline on hover */
+}
+
+
+

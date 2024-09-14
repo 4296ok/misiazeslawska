@@ -8,6 +8,7 @@
             :class="{'small-highlighted': isHighlighted('small')}"
             @mouseover="highlightCategory('small')"
             @mouseleave="clearHighlight"
+            id="small"
           >
             {SMALL}
           </span>
@@ -15,6 +16,7 @@
             :class="{'medium-highlighted': isHighlighted('medium')}"
             @mouseover="highlightCategory('medium')"
             @mouseleave="clearHighlight"
+            id="medium"
           >
             {MEDIUM}
           </span>
@@ -22,6 +24,7 @@
             :class="{'large-highlighted': isHighlighted('large')}"
             @mouseover="highlightCategory('large')"
             @mouseleave="clearHighlight"
+            id="large"
           >
             {LARGE}
           </span>
@@ -137,6 +140,8 @@ function isHighlighted(category) {
 </script>
 
 <style scoped>
+
+
 /* Base styles */
 .index-page {
   padding: 20px;
@@ -222,14 +227,26 @@ function isHighlighted(category) {
 }
 
 /* Highlight classes for different categories */
+#small:hover {
+  color: #31B1E9;
+}
+
+#medium:hover {
+  color: #FFD149;
+}
+
+#large:hover {
+  color: red;
+}
+
 .small-highlighted,
 .projects a.small-highlighted {
-  color: yellow;
+  color: #31B1E9;
 }
 
 .medium-highlighted,
 .projects a.medium-highlighted {
-  color: pink;
+  color: #FFD149;
 }
 
 .large-highlighted,
@@ -251,6 +268,7 @@ function isHighlighted(category) {
   .projects {
     flex-direction: column;
     align-items: flex-start;
+    line-height: 0.5;
   }
 
   .projects a {

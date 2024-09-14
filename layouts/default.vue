@@ -13,6 +13,8 @@
   </script>
   
   <style scoped>
+
+
   .layout {
     min-height: 100vh;
     display: flex;

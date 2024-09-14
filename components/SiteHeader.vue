@@ -1,10 +1,7 @@
 <!-- components/SiteHeader.vue -->
 <template>
   <header class="site-header">
-    <div class="site-title"><p class="bold">MISIA ZESŁAWSKA</p></div>
-    <div class="site-nav">
-      <nuxt-link to ="/">INDEX</nuxt-link>
-    </div>
+    <nuxt-link to ="/"><div class="site-title"><p class="bold">MISIA ZESŁAWSKA</p></div></nuxt-link>
   </header>
 </template>
 

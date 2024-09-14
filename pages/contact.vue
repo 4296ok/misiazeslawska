@@ -1,28 +1,19 @@
 <template>
   <div class="contact-page">
-    <div class="contact-sidebar">
-      <!-- Categories Section -->
-        <div class="placeholder">
-           <br>
+
+    <!-- Contact Info Section -->
+    <div class="contact-container">
+      <div class="contact-info">
+        <div class="info-column">
+          <p>Misia Zeslawska 1997 {PL}<br>Currently based in The Hague {NL}<br>
+          <a href="mailto: zeslawskam@gmail.com">zeslawskam@gmail.com</a></p>
         </div>
-        <a href="/" class="contact-link">{CONTACT}</a>
-      </div>
-
-
-      <!-- Contact Info Section -->
-      <div class="contact-container">
-        <div class="contact-info">
-          <div class="info-column">
-            <p>Misia Zeslawska 1997 {PL}<br>Currently based in The Hague {NL}<br><a href= "mailto: zeslawskam@gmail.com"> zeslawskam@gmail.com
-
-</a></p>
-          </div>
-          <div class="info-column">
-            <p>Education:<br>2025 MA Interior architecture, Royal Academy of Art, The Hague {NL}<br>2021 BA Architecture, Warsaw Faculty of Architecture, Warsaw {PL}</p>
-          </div>
+        <div class="info-column">
+          <p>Education:<br>2025 MA Interior architecture,<br> Royal Academy of Art, The Hague {NL}<br><br>2021 BA Architecture, <br>Warsaw Faculty of Architecture, Warsaw {PL}</p>
         </div>
       </div>
     </div>
+  </div>
 </template>
 
 <style scoped>
@@ -62,6 +53,17 @@
   flex: 1;
   max-width: 1000px;
   line-height: 1;
+}
 
+/* Media query for mobile view */
+@media (max-width: 768px) {
+  .contact-info {
+    flex-direction: column; /* Stack columns vertically */
+    gap: 20px; /* Reduce gap for mobile */
+  }
+
+  .info-column {
+    max-width: 100%; /* Ensure columns take full width */
+  }
 }
 </style>

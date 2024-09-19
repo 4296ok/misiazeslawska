@@ -70,7 +70,7 @@ const workData = {
     title: "THE HOUSE IN THE SHADOW OF A SPOTLIGHT {2024}",
     description: "Heliophobia refers to the fear of the Sun and the potential harm its radiation can cause to humans. This essay explores the complex relationship between late-stage capitalism and the human obsession with tanning—touching on issues like the increase in skin cancer due to global warming, the historical association of pale skin with socioeconomic status, the booming sunscreen industry, and the cult of youth. The second part of the booklet presents a contemporary legend centered around vanity and a mysterious dwelling.",
     imageBasePath: '/images/houseofphobia',
-    numImages: 8,
+    numImages: 7,
     rightColumnContent: `
       <p><strong>TYPE </strong>MA Interior Architecture Studio II, KABK–The House of Phobia</p>
       <p><strong>LOCATION </strong>NL, The Hague</p>
@@ -142,8 +142,19 @@ const workData = {
   },
 };
 
-// Get the work data based on the current slug
+// Generate images for the work based on the slug
 const work = workData[slug];
-work.images = generateImagePaths(work.imageBasePath, work.numImages);
+
+// If the slug is 'houseofphobia', prepend the GIF to the images
+if (slug === 'houseofphobia') {
+  // Generate the regular images
+  work.images = generateImagePaths(work.imageBasePath, work.numImages);
+  
+  // Prepend the GIF as the first image
+  work.images.unshift('/images/houseofphobia8.gif');
+} else {
+  // For other projects, generate their images as usual
+  work.images = generateImagePaths(work.imageBasePath, work.numImages);
+}
 
 </script>

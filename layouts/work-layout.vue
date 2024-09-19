@@ -4,8 +4,13 @@
     <div class="main-content">
       <!-- Image Gallery at the Top -->
       <div class="gallery">
-        <div v-for="image in images" :key="image" class="gallery-item">
-          <img :src="image" :alt="`${workTitle} image`" />
+        <div v-for="(image, index) in images" :key="image" class="gallery-item">
+          <img
+            :src="image"
+            :alt="`${workTitle} image`"
+            :class="{ 'enlarged': selectedImageIndex === index }"
+            @click="toggleImageEnlarge(index)"
+          />
         </div>
       </div>
 
@@ -28,13 +33,39 @@
 </template>
 
 <script setup>
+import { ref, watch } from 'vue';
+
 defineProps({
   workTitle: String,
   workLocation: String,
   workDescription: String,
   images: Array,
 });
+
+// Track the index of the selected/enlarged image
+const selectedImageIndex = ref(null);
+
+// Toggle the image enlargement
+const toggleImageEnlarge = (index) => {
+  if (selectedImageIndex.value === index) {
+    // If the same image is clicked again, reset (shrink)
+    selectedImageIndex.value = null;
+  } else {
+    // Otherwise, enlarge the clicked image
+    selectedImageIndex.value = index;
+  }
+};
+
+// Watch for changes in the enlarged image state
+watch(selectedImageIndex, (newValue) => {
+  if (newValue !== null) {
+    document.body.classList.add('no-scroll');
+  } else {
+    document.body.classList.remove('no-scroll');
+  }
+});
 </script>
+
 
 <style scoped>
 .work-layout {
@@ -74,6 +105,24 @@ defineProps({
   width: auto; /* Maintain aspect ratio */
   object-fit: cover; /* Ensure images cover their container while maintaining aspect ratio */
   display: block; /* Prevent default image margins */
+  cursor: pointer;
+  transition: transform 0.3s ease; /* Smooth transition for enlargement */
+}
+
+/* Prevent scrolling when an image is enlarged */
+.no-scroll {
+  overflow: hidden;
+}
+
+/* Enlarged image styles */
+.gallery-item img.enlarged {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: contain; /* Maintain aspect ratio, fit within the viewport */
+  z-index: 1000; /* Ensure it's on top of everything */
 }
 
 .gallery::-webkit-scrollbar {

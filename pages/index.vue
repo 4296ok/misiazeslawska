@@ -5,25 +5,25 @@
       <div class="categories">
         <div class="categories-links">
           <span
-            :class="{'small-highlighted': isHighlighted('small')}"
-            @mouseover="highlightCategory('small')"
-            @mouseleave="clearHighlight"
+            :class="{'small-highlighted': isHighlighted('small') || hoveredCategory === 'small'}"
+            @mouseover="highlightCategory('small'); hoverCategory('small')"
+            @mouseleave="clearHighlight(); unhoverCategory()"
             id="small"
           >
             {SMALL}
           </span>
           <span
-            :class="{'medium-highlighted': isHighlighted('medium')}"
-            @mouseover="highlightCategory('medium')"
-            @mouseleave="clearHighlight"
+            :class="{'medium-highlighted': isHighlighted('medium') || hoveredCategory === 'medium'}"
+            @mouseover="highlightCategory('medium'); hoverCategory('medium')"
+            @mouseleave="clearHighlight(); unhoverCategory()"
             id="medium"
           >
             {MEDIUM}
           </span>
           <span
-            :class="{'large-highlighted': isHighlighted('large')}"
-            @mouseover="highlightCategory('large')"
-            @mouseleave="clearHighlight"
+            :class="{'large-highlighted': isHighlighted('large') || hoveredCategory === 'large'}"
+            @mouseover="highlightCategory('large'); hoverCategory('large')"
+            @mouseleave="clearHighlight(); unhoverCategory()"
             id="large"
           >
             {LARGE}
@@ -37,16 +37,16 @@
         <div class="projects">
           <nuxt-link
             :class="getClass('large')"
-            @mouseover="highlightCategory('large')"
-            @mouseleave="clearHighlight"
+            @mouseover="showPreview('pizzaiolo1.png', 'large')"
+            @mouseleave="clearHighlight()"
             to="/pizzaiolo"
           >
             PIZZAIOLO PAWILONY
           </nuxt-link>
           <nuxt-link
             :class="getClass('medium')"
-            @mouseover="highlightCategory('medium')"
-            @mouseleave="clearHighlight"
+            @mouseover="showPreview('kujko1.png', 'medium')"
+            @mouseleave="clearHighlight()"
             to="/kujkoxbush"
           >
             KUJKO X BUSH
@@ -54,16 +54,16 @@
           <div class="line-break"></div>
           <nuxt-link
             :class="getClass('medium')"
-            @mouseover="highlightCategory('medium')"
-            @mouseleave="clearHighlight"
+            @mouseover="showPreview('coolcat1.png', 'medium')"
+            @mouseleave="clearHighlight()"
             to="/coolcat"
           >
             THE COOL CAT
           </nuxt-link>
           <nuxt-link
             :class="getClass('small')"
-            @mouseover="highlightCategory('small')"
-            @mouseleave="clearHighlight"
+            @mouseover="showPreview('houseofphobia1.png', 'small')"
+            @mouseleave="clearHighlight()"
             to="/houseofphobia"
           >
             THE HOUSE OF PHOBIA
@@ -71,16 +71,16 @@
           <div class="line-break"></div>
           <nuxt-link
             :class="getClass('medium')"
-            @mouseover="highlightCategory('medium')"
-            @mouseleave="clearHighlight"
+            @mouseover="showPreview('kujko1.png', 'medium')"
+            @mouseleave="clearHighlight()"
             to="/kujko"
           >
             KUJKO NAIL BAR
           </nuxt-link>
           <nuxt-link
             :class="getClass('large')"
-            @mouseover="highlightCategory('large')"
-            @mouseleave="clearHighlight"
+            @mouseover="showPreview('debki1.png', 'large')"
+            @mouseleave="clearHighlight()"
             to="/debki"
           >
             HOLIDAY HOUSE IN DĘBKI
@@ -88,16 +88,16 @@
           <div class="line-break"></div>
           <nuxt-link
             :class="getClass('small')"
-            @mouseover="highlightCategory('small')"
-            @mouseleave="clearHighlight"
+            @mouseover="showPreview('green1.png', 'small')"
+            @mouseleave="clearHighlight()"
             to="/green"
           >
             SALEM GREEN RIETVELD FREESTYLE
           </nuxt-link>
           <nuxt-link
             :class="getClass('medium')"
-            @mouseover="highlightCategory('medium')"
-            @mouseleave="clearHighlight"
+            @mouseover="showPreview('negativespace1.png', 'medium')"
+            @mouseleave="clearHighlight()"
             to="/negativespace"
           >
             THE NEGATIVE SPACE
@@ -105,14 +105,19 @@
           <div class="line-break"></div>
           <nuxt-link
             :class="getClass('large')"
-            @mouseover="highlightCategory('large')"
-            @mouseleave="clearHighlight"
+            @mouseover="showPreview('moodforwood1.png', 'large')"
+            @mouseleave="clearHighlight()"
             to="/moodforwood"
           >
             ANGLER SPOT MOOD FOR WOOD
           </nuxt-link>
         </div>
       </div>
+    </div>
+
+    <!-- Image Preview Section -->
+    <div v-if="previewImage" class="image-preview">
+      <img :src="previewImage" alt="Project Preview" />
     </div>
   </div>
 </template>
@@ -121,61 +126,89 @@
 import { ref } from 'vue';
 
 const highlightedCategory = ref('');
-
+const hoveredCategory = ref(''); // Track the currently hovered category
+const previewImage = ref(null);
 function highlightCategory(category) {
+    highlightedCategory.value = category;
+  }
+
+function showPreview(image, category) {
   highlightedCategory.value = category;
+  hoveredCategory.value = category; // Set hovered category to ensure highlight remains
+  previewImage.value = `images/${image}`; // Update with actual image path
 }
 
 function clearHighlight() {
   highlightedCategory.value = '';
+  previewImage.value = null;
+  hoveredCategory.value = ''; // Clear the hovered category
 }
 
-function getClass(category) {
-  return highlightedCategory.value === category ? `${category}-highlighted` : '';
+function hoverCategory(category) {
+  hoveredCategory.value = category;
+}
+
+function unhoverCategory() {
+  hoveredCategory.value = '';
 }
 
 function isHighlighted(category) {
   return highlightedCategory.value === category;
 }
+
+function getClass(category) {
+    return highlightedCategory.value === category ? `${category}-highlighted` : '';
+  }
+  
+ 
 </script>
 
 <style scoped>
-
-
-/* Base styles */
 .index-page {
   padding: 20px;
 }
 
-.categories-projects-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+.image-preview {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1000; /* Ensure the image is on top */
 }
 
-.categories {
-  display: flex;
-  flex-direction: column;
-  margin-right: 20px;
+.image-preview img {
+  max-width: 300px; /* Set a maximum width for the preview image */
+  height: auto; /* Maintain aspect ratio */
 }
-
-.categories-links {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 5px;
-}
-
-.categories span {
-  display: inline-block;
-  text-decoration: none;
-  font-weight: normal;
-}
-
-.categories span:hover {
-  font-weight: normal;
-  color: #000;
-}
+  
+  .categories-projects-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  
+  .categories {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+  }
+  
+  .categories-links {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .categories span {
+    display: inline-block;
+    text-decoration: none;
+    font-weight: normal;
+  }
+  
+  .categories span:hover {
+    font-weight: normal;
+    color: #000;
+  }
 
 .contact-link {
   display: block;
@@ -226,35 +259,33 @@ function isHighlighted(category) {
   width: 0;
 }
 
-/* Highlight classes for different categories */
-#small:hover {
-  color: #31B1E9;
-}
-
-#medium:hover {
-  color: #FFD149;
-}
-
-#large:hover {
-  color: red;
-}
-
 .small-highlighted,
-.projects a.small-highlighted {
-  color: #31B1E9;
-}
+  .projects a.small-highlighted {
+    color: #31B1E9;
+  }
+  
+  .medium-highlighted,
+  .projects a.medium-highlighted {
+    color: #FFD149;
+  }
+  
+  .large-highlighted,
+  .projects a.large-highlighted {
+    color: red;
+  }
 
-.medium-highlighted,
-.projects a.medium-highlighted {
-  color: #FFD149;
-}
+  #small:hover {
+    color: #31B1E9;
+  }
+  
+  #medium:hover {
+    color: #FFD149;
+  }
+  
+  #large:hover {
+    color: red;
+  }
 
-.large-highlighted,
-.projects a.large-highlighted {
-  color: red;
-}
-
-/* Responsive styles for small screens */
 @media (max-width: 768px) {
   .categories-projects-container {
     flex-direction: column;
@@ -277,6 +308,10 @@ function isHighlighted(category) {
 
   .line-break {
     display: none;
+  }
+
+  .image-preview img {
+    max-width: 150px; /* Smaller image for small screens */
   }
 }
 </style>

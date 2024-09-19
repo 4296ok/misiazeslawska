@@ -1,5 +1,10 @@
 body, a {
-  cursor: url('http://www.rw-designer.com/cursor-extern.php?id=14141'), auto;
+  cursor: url('public/Wrench.cur'), auto;
+}
+
+img:hover {
+  cursor: url('public/Wrench.cur'), auto;
+
 }
 
 * {

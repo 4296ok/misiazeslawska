@@ -45,7 +45,7 @@
           </nuxt-link>
           <nuxt-link
             :class="getClass('medium')"
-            @mouseover="showPreview('kujko1.png', 'medium')"
+            @mouseover="showPreview('kujkoxbush5.png', 'medium')"
             @mouseleave="clearHighlight()"
             to="/kujkoxbush"
           >
@@ -277,7 +277,7 @@ function getClass(category) {
   #small:hover {
     color: #31B1E9;
   }
-  
+
   #medium:hover {
     color: #FFD149;
   }

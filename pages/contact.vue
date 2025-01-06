@@ -6,10 +6,15 @@
       <div class="contact-info">
         <div class="info-column">
           <p>Misia Zeslawska 1997 {PL}<br>Currently based in The Hague {NL}<br>
-          <a href="mailto: zeslawskam@gmail.com">zeslawskam@gmail.com</a></p>
+          <a href="mailto: zeslawskam@gmail.com">zeslawskam@gmail.com</a><br>
+          <a href="https://instagram.com/misianka" target="_blank" rel="noopener noreferrer">Instagram @misianka</a></p>
         </div>
         <div class="info-column">
-          <p>Education:<br>2025 MA Interior architecture,<br> Royal Academy of Art, The Hague {NL}<br><br>2021 BA Architecture, <br>Warsaw Faculty of Architecture, Warsaw {PL}</p>
+          <p>Education:<br>2025 MA Interior architecture,<br> Royal Academy of Art, The Hague {NL}<br><br>2021 BA Architecture, <br>Warsaw Faculty of Architecture, Warsaw {PL}</p><br>
+          <p>Work experience:<br>2022-2023 Interior designer<br>at Loskiewicz.studio, Warsaw {PL}<br><br>2021 Architect assistant internship<br>at NM architekci, Warsaw {PL}</p><br>
+          <p>Community:<br>2024 <a href="horstartsandmusic.com" target="_blank" rel="noopener noreferrer">Horst Club Atelier</a> {BE}<br>stage build up<br><br>2022 <a href="moodforwood.com" target="_blank" rel="noopener noreferrer">Mood for Wood</a> {PL/CZ}<br>design and build camp<br><br>2021 <a href="instgram.com/kolektyw_spot" target="_blank" rel="noopener noreferrer">Kolektyw SPOT</a> {PL}<br>building camp </p><br>
+
+
         </div>
       </div>
     </div>

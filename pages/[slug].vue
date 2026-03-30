@@ -137,10 +137,31 @@ const workData = {
       <p><strong>TYPE </strong>Group Project</p>
       <p><strong>LOCATION </strong>PL/CZ, Český Těšín</p>
       <p><strong>TEAM </strong> Maria Kwiatkowska, Aleksandra Szczebara, Józek Wierzbowski, Jeremi Mroziński, Mateusz Robak, Krisztián Vnučko. Tutored by Marcin Maraszek and Maciej Kaufman of <strong>Archigrest</strong> studio.</p>
-      <p><strong>CONTRIBUTION </strong> research on user needs, 3D model, detail preparation, painting the wood</p>
+      <p><strong>CONTRIBUTION </strong> Research on user needs, 3D model, detail preparation, painting the wood</p>
       `
   },
+  '4leafclover': {
+    title: "4 LEAF CLOVER DRESSOIR {2026}",
+    imageBasePath: '/images/4leafclover',
+    numImages: 7,
+    description: "The object emerges as a personal reflection on wealth, privilege, and the contradictions of contemporary living. Referencing the 16th-century credenza - once a symbol of high social position - it questions what “richness” might mean today. A four-leaf clover motif, traditionally associated with luck, replaces historical ornamentation. It becomes an emblem of a different kind of fortune: not financial abundance, but the privilege of safety and freedom - conditions shaped not by merit, but by the circumstances of being born within a political structure that grants access and rights. The object has been made of repurposed aluminium, marked by scratches and oxidation, modest MDF and cheapest pine wood. Despite relatively low cost of production its sleek appearance aligns with contemporary visual language, subtly echoing aspirational design. The piece presents a personal paradox - existing in a state of financial precarity while inhabiting a life that, in many ways, remains deeply fortunate.",
+    rightColumnContent: `
+          <p><strong>TYPE </strong>Furniture Design</p>    
+      <p><strong>MATERIAL </strong>Aluminium, MDF, Pine Wood</p>    `
+  },
+    'yiyitable': {
+    title: "YIYI SIDE TABLE {2025}",
+    imageBasePath: '/images/yiyitable',
+    numImages: 7,
+    description: "A copy, facsimile, cover, reproduction, bootleg,  duplicate, reenactment, imitation, knock-off, dupe, counterfeit... The variety of terms for a copy reflects the plurality of motives behind copying in the first place. A personal research on coping, orginality, speaking up and calling it quits. ",
+    rightColumnContent: `
+          <p>Inspired by an object seen in YiYi by Edward Yang (2000) </p>   
+                    <p><strong>TYPE </strong>Furniture Design</p>     
+      <p><strong>MATERIAL </strong> Steel Pipe, Tablecloth, Acrylic Sheet, Light Bulb, Electric Cable, Candle Holder</p>    `
+  }
 };
+  
+
 
 // Generate images for the work based on the slug
 const work = workData[slug];
@@ -156,5 +177,7 @@ if (slug === 'houseofphobia') {
   // For other projects, generate their images as usual
   work.images = generateImagePaths(work.imageBasePath, work.numImages);
 }
+
+
 
 </script>

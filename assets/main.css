@@ -32,5 +32,12 @@ a:hover {
   text-decoration: underline; /* Optional: Add an underline on hover */
 }
 
+body {
+  scrollbar-width: none; /* Firefox */
+}
+
+body::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
 
 

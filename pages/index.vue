@@ -1,14 +1,14 @@
 <template>
   <div class="index-page">
     <div class="categories-projects-container">
-      <!-- Categories Section -->
+
+      <!-- Categories -->
       <div class="categories">
         <div class="categories-links">
           <span
             :class="{'small-highlighted': isHighlighted('small') || hoveredCategory === 'small'}"
             @mouseover="highlightCategory('small'); hoverCategory('small')"
             @mouseleave="clearHighlight(); unhoverCategory()"
-            id="small"
           >
             {SMALL}
           </span>
@@ -16,7 +16,6 @@
             :class="{'medium-highlighted': isHighlighted('medium') || hoveredCategory === 'medium'}"
             @mouseover="highlightCategory('medium'); hoverCategory('medium')"
             @mouseleave="clearHighlight(); unhoverCategory()"
-            id="medium"
           >
             {MEDIUM}
           </span>
@@ -24,98 +23,131 @@
             :class="{'large-highlighted': isHighlighted('large') || hoveredCategory === 'large'}"
             @mouseover="highlightCategory('large'); hoverCategory('large')"
             @mouseleave="clearHighlight(); unhoverCategory()"
-            id="large"
           >
             {LARGE}
           </span>
         </div>
+
         <a href="/contact" class="contact-link">{CONTACT}</a>
       </div>
 
-      <!-- Projects Section -->
+      <!-- Projects -->
       <div class="projects-container">
         <div class="projects">
+
           <nuxt-link
             :class="getClass('large')"
             @mouseover="showPreview('pizzaiolo1.png', 'large')"
-            @mouseleave="clearHighlight()"
+            @mouseleave="clearHighlight"
             to="/pizzaiolo"
           >
             PIZZAIOLO PAWILONY
           </nuxt-link>
+
           <nuxt-link
             :class="getClass('medium')"
             @mouseover="showPreview('kujkoxbush5.png', 'medium')"
-            @mouseleave="clearHighlight()"
+            @mouseleave="clearHighlight"
             to="/kujkoxbush"
           >
             KUJKO X BUSH
           </nuxt-link>
+
           <div class="line-break"></div>
+
           <nuxt-link
             :class="getClass('medium')"
             @mouseover="showPreview('coolcat1.png', 'medium')"
-            @mouseleave="clearHighlight()"
+            @mouseleave="clearHighlight"
             to="/coolcat"
           >
             THE COOL CAT
           </nuxt-link>
+
           <nuxt-link
             :class="getClass('small')"
             @mouseover="showPreview('houseofphobia1.png', 'small')"
-            @mouseleave="clearHighlight()"
+            @mouseleave="clearHighlight"
             to="/houseofphobia"
           >
             THE HOUSE OF PHOBIA
           </nuxt-link>
+
           <div class="line-break"></div>
+
           <nuxt-link
             :class="getClass('medium')"
             @mouseover="showPreview('kujko1.png', 'medium')"
-            @mouseleave="clearHighlight()"
+            @mouseleave="clearHighlight"
             to="/kujko"
           >
             KUJKO NAIL BAR
           </nuxt-link>
+
           <nuxt-link
             :class="getClass('large')"
             @mouseover="showPreview('debki1.png', 'large')"
-            @mouseleave="clearHighlight()"
+            @mouseleave="clearHighlight"
             to="/debki"
           >
             HOLIDAY HOUSE IN DĘBKI
           </nuxt-link>
+
           <div class="line-break"></div>
+
           <nuxt-link
             :class="getClass('small')"
             @mouseover="showPreview('green1.png', 'small')"
-            @mouseleave="clearHighlight()"
+            @mouseleave="clearHighlight"
             to="/green"
           >
             SALEM GREEN RIETVELD FREESTYLE
           </nuxt-link>
+
           <nuxt-link
             :class="getClass('medium')"
             @mouseover="showPreview('negativespace1.png', 'medium')"
-            @mouseleave="clearHighlight()"
+            @mouseleave="clearHighlight"
             to="/negativespace"
           >
             THE NEGATIVE SPACE
           </nuxt-link>
+
           <div class="line-break"></div>
+
           <nuxt-link
             :class="getClass('large')"
             @mouseover="showPreview('moodforwood1.png', 'large')"
-            @mouseleave="clearHighlight()"
+            @mouseleave="clearHighlight"
             to="/moodforwood"
           >
             ANGLER SPOT MOOD FOR WOOD
           </nuxt-link>
+
+          <nuxt-link
+            :class="getClass('medium')"
+            @mouseover="showPreview('4leafclover1.png', 'medium')"
+            @mouseleave="clearHighlight"
+            to="/4leafclover"
+          >
+            4-LEAF CLOVER DRESSOIR
+          </nuxt-link>
+
+          <!-- ✅ NEW PROJECT -->
+          <nuxt-link
+            :class="getClass('small')"
+            @mouseover="showPreview('yiyitable1.png', 'small')"
+            @mouseleave="clearHighlight"
+            to="/yiyitable"
+          >
+            YIYI SIDE TABLE
+          </nuxt-link>
+
         </div>
       </div>
     </div>
 
-    <!-- Image Preview Section -->
+    <!-- Preview -->
     <div v-if="previewImage" class="image-preview">
       <img :src="previewImage" alt="Project Preview" />
     </div>
@@ -126,22 +158,11 @@
 import { ref } from 'vue';
 
 const highlightedCategory = ref('');
-const hoveredCategory = ref(''); // Track the currently hovered category
+const hoveredCategory = ref('');
 const previewImage = ref(null);
+
 function highlightCategory(category) {
-    highlightedCategory.value = category;
-  }
-
-function showPreview(image, category) {
   highlightedCategory.value = category;
-  hoveredCategory.value = category; // Set hovered category to ensure highlight remains
-  previewImage.value = `images/${image}`; // Update with actual image path
-}
-
-function clearHighlight() {
-  highlightedCategory.value = '';
-  previewImage.value = null;
-  hoveredCategory.value = ''; // Clear the hovered category
 }
 
 function hoverCategory(category) {
@@ -152,15 +173,29 @@ function unhoverCategory() {
   hoveredCategory.value = '';
 }
 
+function showPreview(image, category) {
+  highlightedCategory.value = category;
+  hoveredCategory.value = category;
+
+  // ✅ FIXED PATH
+  previewImage.value = `/images/${image}`;
+}
+
+function clearHighlight() {
+  highlightedCategory.value = '';
+  hoveredCategory.value = '';
+  previewImage.value = null;
+}
+
 function isHighlighted(category) {
   return highlightedCategory.value === category;
 }
 
 function getClass(category) {
-    return highlightedCategory.value === category ? `${category}-highlighted` : '';
-  }
-  
- 
+  return highlightedCategory.value === category
+    ? `${category}-highlighted`
+    : '';
+}
 </script>
 
 <style scoped>

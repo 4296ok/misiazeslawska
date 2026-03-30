@@ -10,9 +10,9 @@
           <a href="https://instagram.com/misianka" target="_blank" rel="noopener noreferrer">Instagram @misianka</a></p>
         </div>
         <div class="info-column">
-          <p>Education:<br>2025 MA Interior architecture,<br> Royal Academy of Art, The Hague {NL}<br><br>2021 BA Architecture, <br>Warsaw Faculty of Architecture, Warsaw {PL}</p><br>
-          <p>Work experience:<br>2022-2023 Interior designer<br>at Loskiewicz.studio, Warsaw {PL}<br><br>2021 Architect assistant internship<br>at NM architekci, Warsaw {PL}</p><br>
-          <p>Community:<br>2024 <a href="horstartsandmusic.com" target="_blank" rel="noopener noreferrer">Horst Club Atelier</a> {BE}<br>stage build up<br><br>2022 <a href="moodforwood.com" target="_blank" rel="noopener noreferrer">Mood for Wood</a> {PL/CZ}<br>design and build camp<br><br>2021 <a href="instgram.com/kolektyw_spot" target="_blank" rel="noopener noreferrer">Kolektyw SPOT</a> {PL}<br>building camp </p><br>
+          <p><strong>Education:</strong><br>2025 MA Interior architecture,<br> Royal Academy of Art, The Hague {NL}<br><br>2021 BA Architecture, <br>Warsaw Faculty of Architecture, Warsaw {PL}</p><br>
+          <p><strong>Work experience:</strong><br>2025-2026 Alumna assistant at INSIDE, MA Interior Architecture Department, Royal Academy of Art Den Haag {NL} <br><br>2025 Carpentry internship at Medium Triske, Brussels {BE} <br></br><br>2022-2023 Interior designer<br>at Loskiewicz.studio, Warsaw {PL}<br><br>2021 Architect assistant internship<br>at NM architekci, Warsaw {PL}</p><br>
+          <p><strong>Community:</strong><br>2024 <a href="horstartsandmusic.com" target="_blank" rel="noopener noreferrer">Horst Club Atelier</a> {BE}<br>stage build up<br><br>2022 <a href="moodforwood.com" target="_blank" rel="noopener noreferrer">Mood for Wood</a> {PL/CZ}<br>design and build camp<br><br>2021 <a href="instgram.com/kolektyw_spot" target="_blank" rel="noopener noreferrer">Kolektyw SPOT</a> {PL}<br>building camp </p><br>
 
 
         </div>
